@@ -4,14 +4,14 @@ import '../widgets/product_item.dart';
 
 class ProductsOverViewScreen extends StatelessWidget {
   final List<Product> loadedProducts = [
-    Product(
-      id: 'p1',
-      title: 'Red Shirt',
-      description: 'A red shirt - it is pretty red!',
-      price: 29.99,
-      imageUrl:
-          'https://commons.wikimedia.org/wiki/Category:Images#/media/File:Aadil_Manzoor.jpg',
-    ),
+    // Product(
+    //   id: 'p1',
+    //   title: 'Red Shirt',
+    //   description: 'A red shirt - it is pretty red!',
+    //   price: 29.99,
+    //   imageUrl:
+    //       'https://commons.wikimedia.org/wiki/Category:Images#/media/File:Aadil_Manzoor.jpg',
+    // ),
     Product(
       id: 'p2',
       title: 'Trousers',
