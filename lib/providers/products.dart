@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
-import '../models/product.dart';
+import 'package:flutter/material.dart';
+
+import 'product.dart';
 
 class Products with ChangeNotifier {
   List<Product> _item = [
@@ -39,6 +40,10 @@ class Products with ChangeNotifier {
 
   List<Product> get item {
     return [..._item]; //we are return copy of item here
+  }
+
+  Product findById(String id) {
+    return _item.firstWhere((prod) => prod.id == id);
   }
 
   void addProduct() {
