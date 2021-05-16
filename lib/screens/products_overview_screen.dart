@@ -6,7 +6,13 @@ enum FilterOptions {
   All,
 }
 
-class ProductsOverViewScreen extends StatelessWidget {
+class ProductsOverViewScreen extends StatefulWidget {
+  @override
+  _ProductsOverViewScreenState createState() => _ProductsOverViewScreenState();
+}
+
+class _ProductsOverViewScreenState extends State<ProductsOverViewScreen> {
+  var _showOnlyfavoritesData = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +21,13 @@ class ProductsOverViewScreen extends StatelessWidget {
         actions: <Widget>[
           PopupMenuButton(
               onSelected: (FilterOptions selectedValue) {
-                print(selectedValue);
+                setState(() {
+                  if (selectedValue == FilterOptions.Favorite) {
+                    _showOnlyfavoritesData = true;
+                  } else {
+                    _showOnlyfavoritesData = false;
+                  }
+                });
               },
               icon: Icon(Icons.more_vert),
               itemBuilder: (_) => [
@@ -30,7 +42,7 @@ class ProductsOverViewScreen extends StatelessWidget {
                   ])
         ],
       ),
-      body: ProductsGrid(),
+      body: ProductsGrid(_showOnlyfavoritesData),
     );
   }
 }
