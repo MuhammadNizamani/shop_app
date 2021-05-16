@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       value:
           Products(), // i dont no weather it will work or not but i am teating
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'MyShop',
         theme: ThemeData(
             // is not restarted.
