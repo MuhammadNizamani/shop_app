@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/providers/orders.dart';
 import 'package:shop_app/screens/cart_screen.dart';
 import 'package:shop_app/screens/product_detail_screen.dart';
 import 'package:shop_app/screens/products_overview_screen.dart';
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(
           value: Products(),
         ),
-        ChangeNotifierProvider.value(value: Cart())
+        ChangeNotifierProvider.value(value: Cart()),
+        ChangeNotifierProvider.value(value: Orders())
       ], // i dont no weather it will work or not but i am teating
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
