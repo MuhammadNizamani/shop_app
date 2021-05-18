@@ -28,15 +28,25 @@ class CartItem extends StatelessWidget {
         Provider.of<Cart>(context, listen: false).removeItem(productId);
       },
       confirmDismiss: (direction) {
-        showDialog(
+        return showDialog(
             context: context,
             builder: (ctx) => AlertDialog(
                   title: Text("Are you sure?"),
                   content:
                       Text("Do you want to remove the item from the cart? "),
                   actions: <Widget>[
-                    FlatButton(onPressed: () {}, child: Text("NO")),
-                    FlatButton(onPressed: () {}, child: Text("YES"))
+                    // ignore: deprecated_member_use
+                    FlatButton(
+                        onPressed: () {
+                          Navigator.of(context).pop(false);
+                        },
+                        child: Text("NO")),
+                    // ignore: deprecated_member_use
+                    FlatButton(
+                        onPressed: () {
+                          Navigator.of(context).pop(true);
+                        },
+                        child: Text("YES"))
                   ],
                 ));
       },
