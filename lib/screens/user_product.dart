@@ -7,6 +7,7 @@ import '../widgets/user_product_item.dart';
 
 class UserProduct extends StatelessWidget {
   static const routeName = "/user-product";
+
   @override
   Widget build(BuildContext context) {
     final productData = Provider.of<Products>(context);
@@ -29,6 +30,7 @@ class UserProduct extends StatelessWidget {
             itemBuilder: (_, i) => Column(
                   children: <Widget>[
                     UserProductItem(
+                      id: productData.item[i].id,
                       title: productData.item[i].title,
                       imageUrl: productData.item[i].imageUrl,
                     ),
