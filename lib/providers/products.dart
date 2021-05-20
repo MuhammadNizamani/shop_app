@@ -70,4 +70,9 @@ class Products with ChangeNotifier {
       print("this Product does not exits");
     }
   }
+
+  void deleteProduct(String id) {
+    _item.removeWhere((prod) => prod.id == id);
+    notifyListeners();
+  }
 }
